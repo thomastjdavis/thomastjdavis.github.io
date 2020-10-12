@@ -5,15 +5,10 @@
 <title>Calculus Warmups</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel=StyleSheet href="main.css" type="text/css"> 
-<style>
-p.hidden {
-	display:none;
-}
-</style>
-
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <header>
  	<div class="topnav">
 	<a href="apcab20.21.html">Home</a>
@@ -22,10 +17,38 @@ p.hidden {
      <a href="class_demos.html">Demos</a>
      <a href="projects.html#current">Course Projects</a>
     </div>
-<h2> Warm-ups</h2>
+<h1> Warm-ups</h1>
 </header>
-<body>
+<body onLoad=showWU()>
 <script>
+
+	current = new Date()
+	d = current.getDate()
+	m = Number(current.getMonth()) + 1
+	y = Number(current.getYear())-100
+	datey = m+"/"+d+"/"+y
+	
+	bCurrent = new Date(datey)
+	
+	function showWU(){
+		
+		warmUps = document.getElementsByClassName("wu")
+		var i, j
+		for(i =0; i<warmUps.length; i++){
+			 
+			 
+			wuDate = new Date(warmUps[i].id)
+				if (wuDate >= current){
+					warmUps[i].style.display='none';
+					j=i
+				} 
+				if (wuDate < bCurrent) {
+					warmUps[i].style.opacity = .6
+				}
+		}
+			
+	}
+	
 	function reveal(d){
 		document.getElementById(d).style.visibility='visible';
 	}
@@ -34,9 +57,17 @@ p.hidden {
 	}
 </script>
 
-<div>
+<div class="wu" id="10/13/2020">
+ 		 <h2>10/13 Warmup:</h2>
+  			<p class = "tab">Solve the following limit: $$\lim_{x\rightarrow 0}\frac{\sin x}{x^2+3x}$$</p>
+			<p id="10.13a" class="tab" style="visibility: hidden">$$\lim_{x\rightarrow 0}\frac{\sin x}{x^2+3x} = \frac{1}{3}$$</p>
+		<input type="button" id="10.13" onclick=reveal("10.13a") value="Show answer">
+		<input type="button" id="10.13"  onclick=hide("10.13a") value="Hide answer">
+</div>
+
+<div class="wu" id="10/12/2020">
 		<h2>10/12 Warmup:</h2>
-	<p class="tab"><b>Part 1</b> Solve the following limit using the Squeeze/Sandwich theorem: $$\lim_{y \rightarrow 0}y^2\sin(\frac{1}{y})$$</p>
+	<p class="tab"><b>Part 1 - </b> Solve the following limit using the Squeeze/Sandwich theorem: $$\lim_{y \rightarrow 0}y^2\sin(\frac{1}{y})$$</p>
 		<p id="10.12a" class="tab" style="visibility: hidden">$$\lim_{y \rightarrow 0}y^2\sin(\frac{1}{y})=0$$</p>
 		<input type="button" id="10.12a" onclick=reveal("10.12a") value="Show answer to part 1">
 		<input type="button" id="10.12a"  onclick=hide("10.12a") value="Hide answer to part 1">
@@ -44,32 +75,32 @@ p.hidden {
 		<img src="https://tutorial.math.lamar.edu/Classes/CalcI/ComputingLimits_Files/image001.png" alt="Squeeze theorem">
 		
 		
-	<p class="tab"><b>Part 2</b> Evaluate this limit: $$\lim_{\theta\to 0}\frac{1-\cos\theta}{3\sin^2\theta}$$</p>
+	<p class="tab"><b>Part 2 - </b> Evaluate this limit: $$\lim_{\theta\to 0}\frac{1-\cos\theta}{3\sin^2\theta}$$</p>
 	<p id="10.12b" class="tab" style="visibility: hidden">$$\lim_{\theta\to 0}\frac{1-\cos\theta}{3\sin^2\theta}=\frac{1}{3}$$</p>
 		<input type="button" id="10.12b" onclick=reveal("10.12b") value="Show answer to part 2">
 		<input type="button" id="10.12b"  onclick=hide("10.12b") value="Hide answer to part 2">
 	</div>
 
 
-	<div>
+	<div class="wu" id="9/29/2020">
 		<h2>9/29 Warmup:</h2>
 		<p class="tab"> Solve the following limit: $$\lim_{x \rightarrow \infty}\frac{\sqrt {x^2+1}}{3x-2}$$</p>
-		<p id="9.29" class="tab" style="visibility: hidden">$$\lim_{x \to \infty}\frac{\sqrt{x^2+1}}{3x-2} = \frac{1}{3}$$</p>
-		<input type="button" id="9.29" onclick=reveal("9.29") value="Show answer">
-		<input type="button" id="9.29"  onclick=hide("9.29") value="Hide answer">		
+		<p id="9.29a" class="tab" style="visibility: hidden">$$\lim_{x \to \infty}\frac{\sqrt{x^2+1}}{3x-2} = \frac{1}{3}$$</p>
+		<input type="button" id="9.29" onclick=reveal("9.29a") value="Show answer">
+		<input type="button" id="9.29"  onclick=hide("9.29a") value="Hide answer">		
 	</div>
 
-	<div>
+	<div class="wu" id="9/28/2020">
   		<h2>9/28 Warmup:</h2>
 			<p class="tab">Project 1: Looking over problems 1-3</p>
 	</div>
 
-	<div>
+	<div class="wu" id="9/27/2020">
  		 <h2>9/27 Warmup:</h2>
   			<p class = "tab">Solve the following limit: $$\lim_{x\rightarrow 0}\frac{\tan(x)}{\sin(x)}$$</p>
-			<p id="9.27" class="tab" style="visibility: hidden">$$\lim_{x\rightarrow 0}\frac{\tan(x)}{\sin(x)} = 1$$</p>
-		<input type="button" id="9.27" onclick=reveal("9.27") value="Show answer">
-		<input type="button" id="9.27"  onclick=hide("9.27") value="Hide answer">
+			<p id="9.27a" class="tab" style="visibility: hidden">$$\lim_{x\rightarrow 0}\frac{\tan(x)}{\sin(x)} = 1$$</p>
+		<input type="button" id="9.27" onclick=reveal("9.27a") value="Show answer">
+		<input type="button" id="9.27"  onclick=hide("9.27a") value="Hide answer">
 	</div>
 
 
@@ -77,4 +108,3 @@ p.hidden {
 </body>
 
 </html>	
-	
