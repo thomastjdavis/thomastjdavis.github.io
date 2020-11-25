@@ -7,6 +7,7 @@
 <link rel=StyleSheet href="main.css" type="text/css"> 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	<script src="calcScripts.js"></script>
 </head>
 
 <header>
@@ -20,43 +21,46 @@
 <h1> Warm-ups</h1>
 </header>
 <body onLoad=showWU()>
-<script>
+<div class="wu" id="11/26/2020">
+<h2> 11/26 Warmup: </h2>
+<div class="row">
+	<div class="column">
+		<p class="tab"> A police officer is measuring civilians' speeds as they drive on the road.</p>
+	<p>A table below gives the values of driver Bob's position P(t) vs. time </p>
+	<table style="width=50%">
+	<caption>Officer Reed's data</caption>
+	<tr>
+		<th>time (seconds)</th>
+		<td>1</td>
+		<td>3</td>
+		<td>5</td>
+		<td>7</td>
+		<td>9</td>
+		<td>11</td>
+	</tr>
+	<tr>
+		<th>P(t) (meters)</th>
+		<td>22</td>
+		<td>26.5</td>
+		<td>32</td>
+		<td>41</td>
+		<td>46</td>
+		<td>50</td>
+	</tr>
+	</table>
+	<p>Using the table data, estimate P'(4), P'(6), P'(8) and provide an interpretation of the values.</p>
+	<p>Recall: $$P'(a) = \lim_{h\to0}\frac{P(a+h)-P(a)}{h}$$</p>
+	<br>
+	<p align="center">Bob will get a ticket if his speed exceeds 4.0 m/s.<br> Will he receive a ticket?</p>
+	</div>
+	
+	<div class="column">
+		<iframe src="https://www.desmos.com/calculator/htobikaocu?embed" align="center" width="500px" height="500px" style="border: 1px solid #ccc" frameborder=0></iframe>
+		<p><a href="https://www.desmos.com/calculator/nnggeq0yym">Graph link</a></p>
+	</div>
+	</div>
 
-	current = new Date()
-	d = current.getDate()
-	m = Number(current.getMonth()) + 1
-	y = Number(current.getYear())-100
-	datey = m+"/"+d+"/"+y
-	
-	bCurrent = new Date(datey)
-	
-	function showWU(){
-		
-		warmUps = document.getElementsByClassName("wu")
-		var i, j
-		for(i =0; i<warmUps.length; i++){
-			 
-			 
-			wuDate = new Date(warmUps[i].id)
-				if (wuDate >= current){
-					warmUps[i].style.display='none';
-					j=i
-				} 
-				if (wuDate < bCurrent) {
-					warmUps[i].style.opacity = .6
-				}
-		}
-			
-	}
-	
-	function reveal(d){
-		document.getElementById(d).style.visibility='visible';
-	}
-	function hide(d){
-		document.getElementById(d).style.visibility='hidden';
-	}
-</script>
-
+</div>
 <div class="wu" id="10/20/2020">
 	<h2> 10/20 Warmup: </h2>
 	<p class="tab">You dig through Dr. Zoo's office looking for something he lost, and you find the notes of another zoologist (Dr. Wilds) studying the relocated elephants.</p>
