@@ -21,6 +21,34 @@
 <h1> Warm-ups</h1>
 </header>
 <body onLoad=showWU()>
+	<div class="wu" id="1/25/2021">
+		<h2> 1/25 Warmup:</h2>
+		<p class="tab"> The triangle below has points (0,0), (x,0) and (0,y). Notice that x, y are both non-constant functions of time.</p>
+		<iframe src="https://www.desmos.com/calculator/mirgfe882r?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder=0></iframe>
+		<p class="tab"> Answer the following questions:</p>
+		<ol type="A">
+			<li>Recall the formula for the area of a triangle. Assuming <i>x(t), y(t)</i> are differentiable, calculate <i>A'(t)</i>, the rate of change of the area in terms of <i>x(t),y(t)</i> and their derivatives. </li>
+			<li>With the same assumptions, assume that <i>x(t)</i> is constant and equal to 3. What is <i>A'(t)</i>? </li>
+			
+		</ol>
+		<p id="1.25a" class="tab" style="visibility: hidden">The correct answer is $$A'(t)=\dfrac{1}{2}\big(x(t)\cdot y'(t)+x'(t)\cdot y(t)\big)$$</p>
+		<input type="button" id="1.25a" onclick=reveal("1.25a") value="Show answer for part A">
+		<input type="button" id="1.25a"  onclick=hide("1.25a") value="Hide answer for part A">
+		
+		<p id="1.25b" class="tab" style="visibility: hidden">The correct answer is $$A'(t)=\dfrac{1}{2}\big(x(t)\cdot y'(t)\big)=\dfrac{3}{2}y'(t)$$</p>
+		<input type="button" id="1.25b" onclick=reveal("1.25b") value="Show answer for part B">
+		<input type="button" id="1.25b"  onclick=hide("1.25b") value="Hide answer for part B">
+	</div>
+	<div class="wu" id="1/13/2021">
+		<h2> 1/13 Warmup:</h2>
+		<p class="tab"> This graph contains a function, its derivative, and its second derivative. Which graph is which?</p>
+		<iframe src="https://www.desmos.com/calculator/rdxjowp5ui?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder=0></iframe>
+	</div>
+	<div class="wu" id="1/11/2021">
+		<h2>1/11 Warmup:</h2>
+		<p class="tab"> One of the functions is the derivative of the other. Which is the original function? Which is the derivative?</p>
+		<iframe src="https://www.desmos.com/calculator/3p572xl9pe?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder=0></iframe>
+	</div>
 	<div class="wu" id="12/30/2020">
 	<h2>12/30 Warmup:</h2>
 	  	<p class = "tab">Solve the following limit: $$\lim_{t\rightarrow 0}\bigg(\frac{\tan\big(\frac{1}{4}\pi+t\big)-\tan(\frac{1}{4}\pi)}{t}\bigg)$$</p>
