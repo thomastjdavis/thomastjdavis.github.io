@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html>
+<style>
+fieldset{
+	border-radius: 2px;
+	background: linear-gradient(to bottom, rgb(255,255,255) 0%, rgba(255,240,43,0.65) 100%);
+}
+button{
+	box-shadow: 5px 5px 15px -5px #000000;
+	
+}
+.column {
+  float: left;
+  width: 25%;
+  border:5px;
+  border-radius:5px;
+  text-align:center;
+  box-sizing: border-box;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+<script>
+function f1(value){
+return 2*value;
+}
+
+function f2(value){
+	return value;
+}
+
+function f3(value){
+	return 1;
+}
+
+function f4(value){
+	return value-2;
+}
+
+function choose(functionChoice,value){
+	if (functionChoice == 'f1'){
+		return f1(value);
+	}
+	if (functionChoice == 'f2'){
+		return f2(value);
+	}
+	if (functionChoice =='f3'){
+		return f3(value);
+	}
+	if (functionChoice =='f4'){
+		return f4(value);
+	}
+	return "";
+}
+/*
+function setValues(){
+	document.getElements.
+	x.value = val.value
+	y.value=choose(fn.value,val.value)
+	
+}*/
+function addOutput(functionChoice,value){
+	try{
+	const node = document.createElement("li")
+	const textnode = document.createTextNode("("+value+","+String(choose(functionChoice,value))+")")
+	node.appendChild(textnode);
+	document.getElementById(functionChoice+"c").appendChild(node);
+	}
+	catch(err){
+		alert("Please select a function.");
+	}
+}
+</script>
+<body>
+<h1>Functions</h1>
+<form oninput ="x.value=choose(fn.value,val.value)">
+<fieldset>
+<legend><b>Instructions:</b> Choose a function, and give me an input, and I will compute the output.</legend>
+<input type="radio" id="f1" name="fn" value="f1">
+<label for="f1">function 1</label><br>
+<input type="radio" id="f2" name="fn" value="f2">
+<label for="f2">function 2</label><br>
+<input type="radio" id="f3" name="fn" value="f3">
+<label for="f3">function 3</label><br>
+<input type="radio" id="f1" name="fn" value="f4">
+<label for="f4">function 4</label><br>
+
+<label for="val">Give me an input</label><br>
+<input type="number" id="val" value="50"></input><br>
+<button type="button" onclick="addOutput(fn.value,val.value)">Press me to enter input</button>
+<output name="x" for="val"></output>
+</fieldset>
+</form>
+<div class="row">
+  <div class="column" style="background-color:#DC6DB3;">
+	<p>Outputs for function 1:</p>
+	<ul id="f1c">
+		
+		
+	</ul>
+  </div>
+  <div class="column" style="background-color:#E38AC2;">
+  <p>Outputs for function 2:</p>
+	<ul id="f2c">
+		
+		
+	</ul>
+  </div>
+  <div class="column" style="background-color:#EAA7D1;">
+	<p>Outputs for function 3:</p>
+	<ul id="f3c">
+		
+		
+	</ul>
+  </div>
+  <div class="column" style="background-color:#F1C5E1;">
+	<p>Outputs for function 4:</p>
+	<ul id="f4c">
+		
+		
+	</ul>
+  </div>
+</div>
+</ul>
+</div>
+</html>
