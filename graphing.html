@@ -1,0 +1,161 @@
+<html>
+<head>
+<style>
+	* { margin:0; padding:0; }
+	html, body{
+		
+	}
+	
+	canvas{
+		%background: rgba(255,23,24,0.1);
+		display: block;
+	}
+</style>
+</head>
+<body onLoad="ready()">
+<a href="https://www.eeo.cn/s/a/?cid=192164949">Class</a>
+<p>This is our canvas to make graphs</p>
+<canvas width="400" height="400" id="canvas" ></canvas>
+<script>
+
+	
+	var canvas = document.getElementById('canvas');
+	var c = canvas.getContext('2d');
+	
+	w = canvas.width;
+	h = canvas.height;
+	
+	const cursor = {
+		x: innerWidth /2,
+		y: innerHeight/2,
+	};
+	
+	
+	
+	
+
+	function ready(){
+		axes();
+		c.translate(w/2,h/2);
+
+	}
+	
+	/* 
+		need canvas and c defined already
+	*/
+	function axes(){
+	
+	
+	//draws borders
+	c.beginPath();
+	c.moveTo(0,0);
+	c.lineTo(w,0);
+	c.lineTo(w,h);
+	c.lineTo(0,h);
+	c.closePath();
+
+	c.closePath();
+	c.lineWidth = 2;
+	c.stroke();
+	
+	//the y and x axis'
+	
+	c.moveTo(w/2,h/20);
+	c.lineTo(w/2,h*19/20);
+	c.closePath();
+	c.lineWidth=2;
+	c.stroke();
+	
+	c.beginPath();
+	c.moveTo(w/20,h/2);
+	c.lineTo(w*19/20,h/2);
+	c.closePath();
+	c.lineWidth=2;
+	c.stroke();
+	
+	grid(20);
+	}
+	
+	
+	
+	function grid(delta){
+		//setDefault();
+		t = 0.5
+		d = Math.abs(delta)
+		nx = (w/2)/d
+		ny = (h/2)/d
+		
+
+		for(let i=1; i<nx; i++){
+			if ( i * d >= ((w/2)-d)) {
+				break;
+			}
+			c.beginPath();
+			c.moveTo((w/2)+d*i, h/2+d/2);
+			c.lineTo((w/2)+d*i, h/2-d/2);
+			c.closePath();
+			c.lineWidth=t;
+			c.stroke();
+			
+			c.beginPath();
+			c.moveTo((w/2)-d*i, h/2+d/2);
+			c.lineTo((w/2)-d*i, h/2-d/2);
+			c.closePath();
+			c.lineWidth=t;
+			c.stroke();
+		}
+		
+		for(let i=1; i<ny; i++){
+			if( i * d >= ((h/2)-d)){
+				break;
+			}
+			c.beginPath();
+			c.moveTo((w/2)+(d/2), h/2+d*i);
+			c.lineTo((w/2)-(d/2), h/2+d*i);
+			c.closePath();
+			c.lineWidth=t;
+			c.stroke();
+			
+			c.beginPath();
+			c.moveTo((w/2)+(d/2), h/2-(d*i));
+			c.lineTo((w/2)-(d/2), h/2-(d*i));
+			c.closePath();
+			c.lineWidth=t;
+			c.stroke();
+			
+		}
+		c.closePath();
+		//alert("check my work!");
+		
+	}
+	
+	function giveStandard(x1,x2){
+	y1 = x1/(20);
+	y2 = x2/(20);
+		return "(" + y1 + ", " + (-y2) + ")";
+	}
+	
+		addEventListener("mousemove",(e)=> {
+		cursor.x = e.clientX;
+		cursor.y = e.clientY;
+		document.getElementById('coords').innerHTML = giveStandard(cursor.x-w/2,cursor.y-h/2);//"(" + (cursor.x-w/2) + ", " + (cursor.y-h/2) + ")";
+	});
+	
+	
+	addEventListener(
+		"touchmove",
+		(e) => {
+			e.preventDefault();
+			cursor.x = e.touches[0].clientX;
+			cursor.y = e.touches[0].clientY;
+			document.getElementById('coords').innerHTML = giveStandard(cursor.x-w/2,cursor.y-h/2);
+		},
+		{ passive:false }
+	);
+
+	
+
+	</script>
+<p id="coords">to be loaded</p>
+</body>
+</html>
