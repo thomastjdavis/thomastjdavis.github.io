@@ -1,0 +1,16 @@
+body{
+    background:lightgray;
+}
+article{
+    width:50%;
+    position:relative;
+    left:10%;
+    padding:5px;
+    margin-top: 1%;
+    background-color: lightblue;
+}
+
+h2{
+    text-align: center;
+}
+

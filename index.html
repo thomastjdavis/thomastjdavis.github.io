@@ -1,58 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset ="utf-8">
-  <link rel="stylesheet" href="main.css">
-    
-  <title>Thomas Davis Homepage</title>
+  <title>About Me</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./styles/main.css">
 </head>
-<body id="top">
-  <header>
-    <h1>
-      Welcome!
-    </h1>
-    <h2>This is my personal website.</h2>
-<!--    <nav>
-      <a href="index.html">Home</a>
-      <a href="courses.html">Courses</a>
-      <a href="research.html">Research</a>
-      <a href="professional.html">Professional Information</a>
-    </nav> -->
-    
-  <!-- add the links for the individual course websites and research website -->
-    </header>
-  <section>
-    <h5> Note:Course links are current as of 10/1/2020</h5>
-    <h2>Course links:</h2>
+<body>
 
-<p class="tab">If you are here for <em>AP Calculus AB</em>, click this <a href="calculus\apcab20.21.html">link</a>.</p>
-<p class="tab">If you are here for <em>ASMA Contest Preparation</em>, click this <a href="asma_prep.html">link</a>.</p>
-    
-  </section> 
-  <section>
-    <h2> <a href="professional.html">Professional experience</a></h2>
-    <h2> <a href="links.html">Interesting links</a></h2>
-     </section>
-  <a href="#top">Back to top</a>
-    </body>
-  <hline align="left">
-  <script>
-    function linked_button(page_URL){
-  window.location.assign(page_url)
+  <div class="top-nav">
+    <a href="./index.html">Home</a>
+    <a href="./teachNow.html">Teach Now</a>
+    <a href="#">Notes</a>
+    <a href="#">Programming</a>
+    <a href="#">Demos</a>
+  </div>
+<div class="grid-container">
 
-}
-    
-    </script>
-    
-  <footer>
-    
- 
-    <small>&copy; thomastjdavis, Hosted by GitHub pages.</small>  
-   <nav>
-     <button onclick=window.location.assign("index.html")>Home</button>
-     <button onclick=window.location.assign("courses.html")>Courses</button>
-     <button onclick=window.location.assign("professional.html")>Professional</button>
-     <button onclick=window.location.assign("professional.html#research%20exp")>Research</button>    
-    </nav>
-  </footer>
+
+  
+  <div class="left" style="background-color:#aaa;"><strong>Welcome</strong> to my website. Above are links to different parts - feel free to explore!
+  </div>
+  
+  <div class="middle" style="background-color:#bbb;">
+    <p>I have taught, or currently am teaching several different classes. I will (eventually) put up links for everything, but here's a short list:</p>
+    <ul>
+      <li>AP Computer Science A</li>
+      <li>AP Calculus AB</li>
+      <li>Algebra II</li>
+      <li>Honors Phyics</li>
+      <li>AP Physics 1</li>
+      <li>AP Physics C: Mechanics</li>
+    </ul>
+    I have notes I've for several of these classes in <span class="emphasis">Notes</span> up above. The LaTeX source is also available on a repo on my Github.
+  </div>  
+  <div class="right" style="background-color:#ccc;">
+    <p>I love mathematics - here is an image I've made using Julia:</p><br>
+    <img src="./images/tanh(x)-secants.png" alt="a picture showing secant lines at tanh(x)"></div>
+</div>  
+  <div class="footer">
+  <p>Made by thomastjdavis</p>
+  </div>
+</div>
+
+</body>
 </html>
+
+
