@@ -1,0 +1,10 @@
+h1,h2{
+    display:inline;
+    text-align: center;
+    color:orangered;
+    text-decoration:solid;
+}
+
+fieldset{
+    width:50%;
+}
