@@ -1,0 +1,44 @@
+#board{
+    display:grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    width:50%;
+    position:absolute;
+    left:20%;
+
+}
+
+.board-position{
+   border: 1px solid black;
+   height:50px;
+   background-color: lightgray;
+   display:flex;
+   justify-content: center;
+   align-items:center;
+}
+.coordinates{
+    background-color:white;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    border: 1px solid red;
+    height:50px;
+}
+.point{
+    height:20px;
+    width:20px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.142);
+}
+
+.point:hover{
+    background-color:black ;
+    color:red;
+}
+
+.klingon{
+    color:red;
+}
+
+div#information p{
+    visibility: hidden;
+}
