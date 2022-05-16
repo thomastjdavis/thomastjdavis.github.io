@@ -1,0 +1,68 @@
+#computer{
+    padding:0;
+    margin:0;
+    background-color: black;
+    height:1000px;
+    width:75%;
+    position:absolute;
+    left:10%;
+    border-radius: 10%;
+}
+
+#computerInfo{
+    background-color: rgb(71, 71, 71);
+    position:absolute;
+    top:500px;
+    display:grid;
+    grid-template-columns: 1fr 300px 1fr;
+    height:auto;
+}
+
+#computerInfo form{
+    border:1px solid red;
+}
+p,span{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: #FFFFFF;
+    font-weight: 700;
+    text-decoration: none solid white;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    position:inherit;
+
+}
+
+#calculatorContainer{
+    visibility: hidden;
+    height:auto;
+    width:auto;
+   
+}
+div#calculator{
+    height:300px;
+
+}
+
+div#numeric{
+    padding:5px;
+}
+div#calculations{
+    padding-left: 10px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: #FFFFFF;
+    font-weight: 700;
+    text-decoration: none solid white;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+}
+input#showGraph{
+    visibility: hidden;
+}

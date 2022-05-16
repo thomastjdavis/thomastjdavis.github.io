@@ -4,7 +4,7 @@
     width:50%;
     position:absolute;
     left:20%;
-
+    box-shadow:10px 5px 5px darkgrey;
 }
 
 .board-position{
@@ -33,12 +33,4 @@
 .point:hover{
     background-color:black ;
     color:red;
-}
-
-.klingon{
-    color:red;
-}
-
-div#information p{
-    visibility: hidden;
 }

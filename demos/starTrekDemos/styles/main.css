@@ -1,10 +1,32 @@
+body{
+    background-color: lightslategrey;
+}
 h1,h2{
-    display:inline;
+    display:grid;
     text-align: center;
-    color:orangered;
-    text-decoration:solid;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 25px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: #FF241A;
+    font-weight: 700;
+    text-decoration: underline solid rgb(68, 68, 68);
+    font-style: normal;
+    font-variant: normal;
+    text-transform: uppercase;
 }
 
 fieldset{
     width:50%;
+}
+
+input[type="button"]{
+    position:relative;
+    left:10%;
+}
+
+label{
+    margin:1px;
+    color:white;
+    font-weight:bold;
 }
