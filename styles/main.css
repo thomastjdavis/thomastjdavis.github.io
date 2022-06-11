@@ -29,6 +29,7 @@
     width:5vh;
     border-radius: 10%;
     color:orangered;
+      transition: padding 250ms;
   }
 
   .top-nav a:hover{
